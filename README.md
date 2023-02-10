@@ -36,10 +36,10 @@ When invoked like this, the application should obtain a single certificate valid
 
 #### Arguments
 
-##### positional arguments
+##### Positional arguments
 * Challenge type (required, {`dns01` | `http01`}) indicates which ACME challenge type the client should perform. Valid options are dns01 and http01 for the dns-01 and http-01 challenges, respectively.
 
-##### keyword arguments
+##### Keyword arguments
 * `--dir DIR_URL` (required): DIR_URL is the directory URL of the ACME server that should be used.
 * `--record IPv4_ADDRESS` (required): IPv4_ADDRESS is the IPv4 address which must be returned by your DNS server for all A-record queries.
 * `--domain DOMAIN` (required, multiple): DOMAIN  is the domain for  which to request the certificate. If multiple --domain flags are present, a single certificate for multiple domains should be requested. Wildcard domains have no special flag and are simply denoted by, e.g., *.example.net.
