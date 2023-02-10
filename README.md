@@ -12,4 +12,6 @@ Grade: 6/6
 Solve DTF challenge proposed.
 
 Grade: 6/6
+
+*Credit for all exercises goes to the course Information Security Lab HS2022 (263-0009-00L) at ETHZ.*
  
