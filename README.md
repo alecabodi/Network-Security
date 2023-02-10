@@ -1,5 +1,5 @@
 # ACMEv2 Project
-> *Project from NetSec 2022 @ ETH Zurich*
+> *Project from NetSec 2022 @ ETH Zürich*
 
 Public Key Infrastructures (PKIs) using X.509 certificates are used for many purposes, the most significant of which is the authentication of domain names. Certificate Authorities (CAs) are trusted to verify that an applicant for a certificate legitimately represents the domain name(s) in the certificate. Traditionally, this verification is done through various ad-hoc methods.
 The Automatic Certificate Management Environment (ACME) protocol aims to facilitate the automation of certificate issuance by creating a standardized and machine-friendly protocol for certificate management. 
