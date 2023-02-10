@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# stops processing in case of failure
+set -euo pipefail
+
+# prints each line executed
+set -x
+
+pwd
+
+echo "Your solution goes here"
+
+# point 1 and 2
+sudo sed -i '12 c ip saddr != grader.dtf.netsec.inf.ethz.ch tcp dport 5432 drop' /etc/nftables.conf
+sudo systemctl restart nftables.service 
+
+# point 3
+sudo chmod 700 /var/www/secret
+
+# point 4 (instructions from certbot.eff.org)
+sudo apt update -y
+sudo apt install snapd -y
+sudo snap install core; sudo snap refresh core; sudo snap install --classic certbot
+sudo ln -s /snap/bin/certbot /usr/bin/certbot
+sudo certbot --register-unsafely-without-email --nginx -d acabodi.student.dtf.netsec.inf.ethz.ch --server http://acme.dtf.netsec.inf.ethz.ch/acme/default/directory --agree-tos -v
+
+# point 5
+sudo sed -i '34 c ssl_protocols TLSv1.3;' /etc/nginx/nginx.conf
+sudo sed -i '35 c ssl_prefer_server_ciphers off;' /etc/nginx/nginx.conf
+sudo systemctl restart nginx.service 
+
+
