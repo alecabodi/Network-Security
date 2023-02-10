@@ -12,10 +12,10 @@ However, to make the application self-contained and in order to facilitate testi
 The application consists of the following components:
 
 * ACME client: An ACME client which can interact with a standard-conforming ACME server.
-* DNS server: A DNS server which resolves the DNS queries of the ACME server.
-* Challenge HTTP server: An HTTP server to respond to http-01 queries of the ACME server.
-* Certificate HTTPS server: An HTTPS server which uses a certificate obtained by the ACME client.
-* Shutdown HTTP server:  An HTTP server to receive a shutdown signal.
+* DNS server: A DNS server which resolves the DNS queries of the ACME server. It should run on UDP port `10053`. 
+* Challenge HTTP server: An HTTP server to respond to http-01 queries of the ACME server. It should run on TCP port `5002`. 
+* Certificate HTTPS server: An HTTPS server which uses a certificate obtained by the ACME client. The server should serve the full certificate chain obtained from the ACME server, i.e., including the intermediate certificate. It should run on TCP port `5001`.
+* Shutdown HTTP server:  An HTTP server to receive a shutdown signal. It should run on TCP port `5003`.
 
 ### Functionalities
 
